@@ -1,4 +1,5 @@
 import * as bodyParser from "body-parser";
+import chalk from "chalk";
 import * as cookieParser from "cookie-parser";
 import errorHandler = require("errorhandler");
 import * as express from "express";
@@ -72,7 +73,7 @@ export class Server {
     this.app.set("view engine", "pug");
 
     // use logger middlware
-    this.app.use(logger("dev"));
+    this.app.use(logger(`${chalk.blueBright("[mock]")} :method :url :status :res[content-length] - :response-time ms`));
 
     // use json form parser middlware
     this.app.use(bodyParser.json());
