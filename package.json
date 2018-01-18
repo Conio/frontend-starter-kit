@@ -1,0 +1,23 @@
+{
+  "name": "@conio/conio-frontend-boilerplate",
+  "version": "0.1.0",
+  "description": "Frontend starter kit: offline-first responsive PWA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Coming soon'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/squadrone/conio-frontend-boilerplate.git"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "redux",
+    "pwa",
+    "serviceworker"
+  ],
+  "author": "Conio <info@conio.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/squadrone/conio-frontend-boilerplate#readme"
+}
