@@ -1,5 +1,9 @@
+require('dotenv').config()
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const { CheckerPlugin } = require('awesome-typescript-loader')
+const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+console.log(process.env.SERVER_PORT)
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -42,6 +46,17 @@ module.exports = {
       cache: true,
       parallel: true,
       sourceMap: true
+    }),
+    new BrowserSyncPlugin({
+      // browse to http://localhost:3000/ during development,
+      // ./public directory is being served
+      host: 'localhost',
+      ui: false,
+      proxy: "localhost:" + process.env.SERVER_PORT,
+      serveStatic: [{
+        route: '/assets',
+        dir: 'dist'
+      }]
     })
   ]
 };

@@ -2,6 +2,7 @@
 "use strict";
 
 //module dependencies
+require('dotenv').config()
 var server = require("../server");
 var debug = require("debug")("express:server");
 var http = require("http");
@@ -9,7 +10,7 @@ var chalk = require("chalk");
 var logger = require("../logger").Logger;
 
 //create http server
-var httpPort = normalizePort(process.env.PORT || 8080);
+var httpPort = normalizePort(process.env.SERVER_PORT || 8080);
 var app = server.Server.bootstrap().app;
 app.set("port", httpPort);
 var httpServer = http.createServer(app);

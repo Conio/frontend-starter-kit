@@ -48,7 +48,7 @@ export class IndexRoute extends BaseRoute {
   public index(req: Request, res: Response, next: NextFunction) {
     // define page properties
     this.title = "Hello World!";
-    this.addScript("bundle.js");
+    this.addScript("/assets/bundle.js");
     // render template
     this.render(req, res, "index");
   }
