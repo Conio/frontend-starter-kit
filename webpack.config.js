@@ -1,3 +1,6 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const { CheckerPlugin } = require('awesome-typescript-loader')
+
 module.exports = {
   entry: "./src/index.tsx",
   output: {
@@ -15,12 +18,12 @@ module.exports = {
 
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by ts-loader'.
+      // All files with a '.ts' or '.tsx' extension will be handled by awesome-typescript-loader'.
       {
         test: /\.tsx?$/,
-        loader: "ts-loader",
+        loader: "awesome-typescript-loader",
         options: {
-          configFile: __dirname + "/tsconfig.json"
+          useCache: true
         }
       },
 
@@ -31,5 +34,14 @@ module.exports = {
         loader: "source-map-loader"
       }
     ]
-  }
+  },
+
+  plugins: [
+    new CheckerPlugin(),
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+      sourceMap: true
+    })
+  ]
 };

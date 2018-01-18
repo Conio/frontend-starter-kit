@@ -32,3 +32,7 @@ dist/
 
 # DotEnv
 .env
+
+# cache
+.cache
+.awcache
