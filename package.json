@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test npm run tslint",
-    "tslint": "tslint -c config/typescript/tslint.json 'src/**/*.{ts,tsx}'",
-    "build": "webpack --config config/webpack/config.js"
+    "tslint": "tslint -c ./tslint.json './src/**/*.{ts,tsx}'",
+    "build": "webpack --config ./webpack.config.js"
   },
   "repository": {
     "type": "git",
