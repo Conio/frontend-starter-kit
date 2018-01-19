@@ -2,7 +2,7 @@
   "name": "@conio/conio-frontend-boilerplate",
   "version": "0.1.0",
   "description": "Frontend starter kit: offline-first responsive PWA",
-  "main": "index.js",
+  "main": "src/index.tsx",
   "scripts": {
     "test": "NODE_ENV=test npm run test:lint && npm run test:unit",
     "test:lint": "tslint -c ./tslint.json './src/**/*.{ts,tsx}'",
@@ -26,7 +26,7 @@
     "serviceworker"
   ],
   "author": "Conio <info@conio.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "homepage": "https://bitbucket.org/squadrone/conio-frontend-boilerplate#readme",
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.9",
